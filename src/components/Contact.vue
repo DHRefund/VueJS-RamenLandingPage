@@ -3,7 +3,7 @@ import { onMounted } from "vue";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
 
-import { openingHours, socials } from "../../constants/index.js";
+import { openingHours, socials } from "../../constants/index.ts";
 
 onMounted(() => {
   const titleSplit = SplitText.create("#contact h2", { type: "words" });

@@ -2,7 +2,7 @@
 import { ref, computed, watch } from "vue";
 import gsap from "gsap";
 
-import { allCocktails } from "../../constants/index.js";
+import { allCocktails } from "../../constants/index.ts";
 
 const currentIndex = ref(0);
 const totalCocktails = allCocktails.length;

@@ -2,7 +2,7 @@
 import { onMounted } from "vue";
 import gsap from "gsap";
 
-import { featureLists, goodLists } from "../../constants/index.js";
+import { featureLists, goodLists } from "../../constants/index.ts";
 
 const isMobile = window.matchMedia("(max-width: 767px)").matches;
 

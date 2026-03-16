@@ -2,7 +2,7 @@
 import { onMounted } from "vue";
 import gsap from "gsap";
 
-import { cocktailLists, mockTailLists } from "../../constants/index.js";
+import { cocktailLists, mockTailLists } from "../../constants/index.ts";
 
 onMounted(() => {
   const parallaxTimeline = gsap.timeline({

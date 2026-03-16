@@ -2,7 +2,7 @@
 import gsap from "gsap";
 import { onMounted } from "vue";
 
-import { navLinks } from "../../constants/index.js";
+import { navLinks } from "../../constants/index.ts";
 
 onMounted(() => {
   const navTween = gsap.timeline({
