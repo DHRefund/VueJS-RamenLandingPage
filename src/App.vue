@@ -4,7 +4,7 @@ import { ScrollTrigger, SplitText } from "gsap/all";
 
 import Navbar from "./components/Navbar.vue";
 import Hero from "./components/Hero.vue";
-import Cocktails from "./components/Cocktails.vue";
+import Ramen from "./components/Ramen.vue";
 import About from "./components/About.vue";
 import Art from "./components/Art.vue";
 import Menu from "./components/Menu.vue";
@@ -17,7 +17,7 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
   <main>
     <Navbar />
     <Hero />
-    <Cocktails />
+    <Ramen />
     <About />
     <Art />
     <Menu />

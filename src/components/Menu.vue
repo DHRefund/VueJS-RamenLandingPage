@@ -1,23 +1,23 @@
 <script setup lang="ts">
 import { ref, computed, watch } from "vue";
 import gsap from "gsap";
-
-import { allCocktails } from "../../constants/index.ts";
+import type { Ramen } from "../../constants/index.ts";
+import { allRamen } from "../../constants/index.ts";
 
 const currentIndex = ref(0);
-const totalCocktails = allCocktails.length;
+const totalRamen = allRamen.length;
 
 const goToSlide = (index: number) => {
-  currentIndex.value = (index + totalCocktails) % totalCocktails;
+  currentIndex.value = (index + totalRamen) % totalRamen;
 };
 
-const getCocktailAt = (indexOffset: number) => {
-  return allCocktails[(currentIndex.value + indexOffset + totalCocktails) % totalCocktails];
+const getRamenAt = (indexOffset: number): Ramen => {
+  return allRamen[(currentIndex.value + indexOffset + totalRamen) % totalRamen]!;
 };
 
-const currentCocktail = computed(() => getCocktailAt(0));
-const prevCocktail = computed(() => getCocktailAt(-1));
-const nextCocktail = computed(() => getCocktailAt(1));
+const currentRamen = computed(() => getRamenAt(0));
+const prevRamen = computed(() => getRamenAt(-1));
+const nextRamen = computed(() => getRamenAt(1));
 
 const runAnimations = () => {
   gsap.fromTo("#title", { opacity: 0 }, { opacity: 1, duration: 1 });
@@ -65,45 +65,45 @@ watch(
     <!-- <img src="/images/slider-left-leaf.png" alt="left-leaf" id="m-left-leaf" />
     <img src="/images/slider-right-leaf.png" alt="right-leaf" id="m-right-leaf" /> -->
 
-    <h2 id="menu-heading" class="sr-only">Cocktail Menu</h2>
+    <h2 id="menu-heading" class="sr-only">ラーメンメニュー</h2>
 
-    <nav class="cocktail-tabs" aria-label="Cocktail Navigation">
+    <nav class="cocktail-tabs" aria-label="Ramen Navigation">
       <button
-        v-for="(cocktail, index) in allCocktails"
-        :key="cocktail.id"
+        v-for="(ramen, index) in allRamen"
+        :key="ramen.id"
         :class="index === currentIndex ? 'text-white border-white' : 'text-white/50 border-white/50'"
         @click="goToSlide(index)"
       >
-        {{ cocktail.name }}
+        {{ ramen.name }}
       </button>
     </nav>
 
     <div class="content">
       <div class="arrows">
         <button class="text-left" @click="goToSlide(currentIndex - 1)">
-          <span>{{ prevCocktail.name }}</span>
+          <span>{{ prevRamen.name }}</span>
           <img src="/images/right-arrow.png" alt="right-arrow" aria-hidden="true" />
         </button>
 
         <button class="text-left" @click="goToSlide(currentIndex + 1)">
-          <span>{{ nextCocktail.name }}</span>
+          <span>{{ nextRamen.name }}</span>
           <img src="/images/left-arrow.png" alt="left-arrow" aria-hidden="true" />
         </button>
       </div>
 
       <div class="cocktail">
-        <img :src="currentCocktail.image" class="object-contain" />
+        <img :src="currentRamen.image" class="object-contain" />
       </div>
 
       <div class="recipe">
         <div class="info">
-          <p>Recipe for:</p>
-          <p id="title">{{ currentCocktail.name }}</p>
+          <p>本日のラーメン:</p>
+          <p id="title">{{ currentRamen.name }}</p>
         </div>
 
         <div class="details">
-          <h2>{{ currentCocktail.title }}</h2>
-          <p>{{ currentCocktail.description }}</p>
+          <h2>{{ currentRamen.title }}</h2>
+          <p>{{ currentRamen.description }}</p>
         </div>
       </div>
     </div>

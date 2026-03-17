@@ -34,7 +34,7 @@ interface Social {
   url: string;
 }
 
-interface Cocktail {
+export interface Ramen {
   id: number;
   name: string;
   image: string;
@@ -49,14 +49,14 @@ const navLinks: NavLink[] = [
   { id: "contact", title: "Contact" },
 ];
 
-const cocktailLists: RamenItem[] = [
+const ramenLists: RamenItem[] = [
   { name: "豚骨ラーメン", country: "AU", detail: "Battle", price: "1000¥" },
   { name: "醤油ラーメン", country: "AU", detail: "Battle", price: "1000¥" },
   { name: "味噌ラーメン", country: "CA", detail: "750 ml", price: "1000¥" },
   { name: "塩ラーメン", country: "IE", detail: "600 ml", price: "1000¥" },
 ];
 
-const mockTailLists: RamenItem[] = [
+const mockRamenLists: RamenItem[] = [
   { name: "豚骨ラーメン", country: "AU", detail: "Battle", price: "1000¥" },
   { name: "醤油ラーメン", country: "AU", detail: "Battle", price: "1000¥" },
   { name: "味噌ラーメン", country: "CA", detail: "750 ml", price: "1000¥" },
@@ -70,12 +70,7 @@ const profileLists: ProfileItem[] = [
   { imgPath: "/images/profile4.png" },
 ];
 
-const featureLists: string[] = [
-  "厳選された食材",
-  "職人の技",
-  "本格的なラーメン作り",
-  "毎日仕込む新鮮なスープ",
-];
+const featureLists: string[] = ["厳選された食材", "職人の技", "本格的なラーメン作り", "毎日仕込む新鮮なスープ"];
 
 const goodLists: string[] = [
   "絶妙に調和した味",
@@ -104,7 +99,7 @@ const socials: Social[] = [
   { name: "Facebook", icon: "/images/fb.png", url: "#" },
 ];
 
-const allCocktails: Cocktail[] = [
+const allRamen: Ramen[] = [
   {
     id: 1,
     name: "豚骨ラーメン",
@@ -141,13 +136,13 @@ const allCocktails: Cocktail[] = [
 
 export {
   navLinks,
-  cocktailLists,
-  mockTailLists,
+  ramenLists,
+  mockRamenLists,
   profileLists,
   featureLists,
   goodLists,
   openingHours,
   storeInfo,
   socials,
-  allCocktails,
+  allRamen,
 };

@@ -2,7 +2,7 @@
 import { onMounted } from "vue";
 import gsap from "gsap";
 
-import { cocktailLists, mockTailLists } from "../../constants/index.ts";
+import { ramenLists, mockRamenLists } from "../../constants/index.ts";
 
 onMounted(() => {
   const parallaxTimeline = gsap.timeline({
@@ -28,10 +28,9 @@ onMounted(() => {
         <h2>人気ラーメン:</h2>
 
         <ul>
-          <li v-for="{ name, country, detail, price } in cocktailLists" :key="name">
+          <li v-for="{ name, country, detail, price } in ramenLists" :key="name">
             <div class="md:me-28">
               <h3>{{ name }}</h3>
-              <!-- <p>{{ country }} | {{ detail }}</p> -->
             </div>
             <span>- {{ price }}</span>
           </li>
@@ -42,10 +41,9 @@ onMounted(() => {
         <h2>おすすめラーメン:</h2>
 
         <ul>
-          <li v-for="{ name, country, detail, price } in mockTailLists" :key="name">
+          <li v-for="{ name, country, detail, price } in mockRamenLists" :key="name">
             <div class="me-28">
               <h3>{{ name }}</h3>
-              <!-- <p>{{ country }} | {{ detail }}</p> -->
             </div>
             <span>- {{ price }}</span>
           </li>
